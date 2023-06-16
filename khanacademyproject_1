@@ -1,0 +1,18 @@
+CREATE TABLE StoreFront
+(SKU INTEGER PRIMARY KEY, ItemName TEXT, Units INTEGER, Category TEXT, Price INTEGER);
+
+INSERT INTO StoreFront VALUES(101, "Shirt", 123, "Clothing", 5);
+INSERT INTO StoreFront VALUES(102, "Pan", 22,"Appliances", 15);
+INSERT INTO StoreFront VALUES(103, "Slinky", 13, "Toys", 1);
+INSERT INTO StoreFront VALUES(104, "Kindle",8,"Electronics", 65);
+INSERT INTO StoreFront VALUES(105, "Rug", 67, "Homewares", 20);
+
+SELECT * FROM StoreFront ORDER BY Price;
+
+SELECT  SUM (Units) AS Units_On_Hand FROM StoreFront;
+
+SELECT Distinct(ItemName) FROM Storefront ORDER BY Price;
+
+SELECT ItemName FROM StoreFront WHERE Price > 10 AND Units > 15 ORDER BY Units DESC;
+
+SELECT ItemName, Units*Price AS Potential_Sales FROM StoreFront
